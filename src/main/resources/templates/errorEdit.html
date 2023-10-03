@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/bootstrap4/css/bootstrap.min.css" th:href="@{/css/bootstrap4/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../static/css/css/formStyle.css" th:href="@{/css/formStyle.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="box"  th:object="${error}" th:action="@{/error/save}" method="post">
+                        <h1>Hata Ekle</h1>
+                        <p class="text-muted">Lütfen verileri girin!</p>
+                        <input type="text" placeholder="id" id="id" th:field="*{id}" required readonly>
+                        <input type="text" placeholder="Error" id="error" th:field="*{title}" required>
+                        <input type="text" placeholder="Code" id="code" th:field="*{code}" required>
+                        <input type="text" placeholder="Çözüm" id="solution" th:field="*{solution}" required>
+                        <input type="text" placeholder="User id" id="user_id" th:field="*{userid}" required>
+                        <input type="submit" value="Ürünü Ekle">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
